@@ -22,9 +22,25 @@ Pizza.prototype.fullPizza = function () {
 
 let pizza = new Pizza();
 
-function handleSizeSubmission(event) {
-  event.preventDefault();
+function hideToppings () {
+  document.getElementById("hidden-large").setAttribute("class", "hidden");
+  document.getElementById("hidden-medium").setAttribute("class", "hidden");
+  document.getElementById("hidden-small").setAttribute("class", "hidden");
+}
 
+function handleRadio(event) {
+  event.preventDefault();
+  const radioSize = document.querySelector("input[name='size']:checked").value;
+
+  hideToppings();
+
+  if (radioSize === "large") {
+    document.getElementById("hidden-large").removeAttribute("class");
+  } else if (radioSize === "medium") {
+    document.getElementById("hidden-medium").removeAttribute("class");
+  } else if (radioSize === "small") {
+    document.getElementById("hidden-small").removeAttribute("class");
+  }
 }
 
 function handleFormSubmission(event) {
@@ -33,6 +49,6 @@ function handleFormSubmission(event) {
 }
 
 window.addEventListener("load", function() {
-  document.querySelector("#size-select").addEventListener("click",handleSizeSubmission);
+  document.querySelector("#size-select").addEventListener("click",handleRadio);
   document.querySelector("#pizza-submit").addEventListener("click",handleFormSubmission); 
 })

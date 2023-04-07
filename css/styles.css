@@ -1,7 +1,19 @@
-/* .hidden1 {
+/* .hiddenLarge {
   display: none;
 }
 
-.hidden2 {
+.hiddenMedium {
+  display: none;
+}
+
+.hiddenSmall {
+  display: none;
+}
+
+.hiddenTotal {
   display: none;
 } */
+
+.hidden {
+  display: none;
+}
