@@ -7,24 +7,21 @@ function Pizza(size) {
 
 Pizza.prototype.addToppings = function (newTopping) {
   this.toppings.push(newTopping);
-  let toppingsTotal = 0;
+}
+
+Pizza.prototype.toppingsCostCalculate = function() {
   let smallToppings = 1; 
   let mediumToppings = 2;
   let largeToppings = 3;
   let toppingsNum = this.toppings.length;
-  
   if (this.size === "small") {
-    toppingsTotal = (smallToppings * toppingsNum);
+    return (smallToppings * toppingsNum);
   } else if (this.size === "medium") {
-    toppingsTotal = (mediumToppings * toppingsNum);
+    return (mediumToppings * toppingsNum);
   } else if (this.size === "large") {
-    toppingsTotal = (largeToppings * toppingsNum);
+    return (largeToppings * toppingsNum);
   }
-  return toppingsTotal; 
-};
-
-Pizza.prototype.fullPizza = function () {
-  return this.size + ": " + this.toppings; 
+  return this.toppingsCostCalculate(); 
 }
 
 Pizza.prototype.sizeCostCalculate = function() {
@@ -40,6 +37,10 @@ Pizza.prototype.sizeCostCalculate = function() {
 
 Pizza.prototype.totalCostCalculate = function() {
   this.totalCost = this.sizeCost + this.toppingsTotal; 
+}
+
+Pizza.prototype.fullPizza = function () {
+  return this.size + ": " + this.toppings; 
 }
 
 // Pizza.prototype.assignId = function() {
