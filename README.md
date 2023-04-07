@@ -10,12 +10,15 @@ Expected Output: (size: "medium", toppings: ['pepperoni', 'olives']);
 
 Pizza.prototype.addToppings()
 
-Test: "It will create a function that will push new toppings chosen into the Pizza toppings array"
+Test: "It will create a function that will push new toppings chosen into the Pizza toppings array."
 Code: testPizza.addToppings('peppers');
 Expected Output: (size: "medium", toppings: ['pepperoni', 'olives','peppers']); 
 
+Pizza.prototype.fullPizza()
 
-Test: 
-Code: 
-Expected Output: 
+Test: "It will return a string to display the size and toppings chosen."
+Code: testPizza.fullPizza();
+Expected Output: 'medium: peppers,sausage,olives'
+
+
 
