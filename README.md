@@ -1,6 +1,6 @@
 Describe: Pizza()
 
-Test: "It will create a pizza object constructor with keys for size and toppings."
+Test: "It will create a pizza object with keys for size and toppings."
 Code: let testPizza = new Pizza("medium", "pepperoni");
 Expected Output: (size: "medium", toppings: "pepperoni");
 
@@ -8,9 +8,12 @@ Test: "It will create a pizza with an array for multiple toppings chosen."
 Code: let testPizza = new Pizza("medium",['pepperoni','olives']);
 Expected Output: (size: "medium", toppings: ['pepperoni', 'olives']); 
 
-Test: 
-Code: 
-Expected Output: 
+Pizza.prototype.addToppings()
+
+Test: "It will create a function that will push new toppings chosen into the Pizza toppings array"
+Code: testPizza.addToppings('peppers');
+Expected Output: (size: "medium", toppings: ['pepperoni', 'olives','peppers']); 
+
 
 Test: 
 Code: 
