@@ -20,3 +20,5 @@ Pizza.prototype.fullPizza = function () {
 
 // User Interface Logic
 
+let pizza = new Pizza();
+
