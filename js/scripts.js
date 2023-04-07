@@ -3,6 +3,7 @@
 function Pizza(size, topping) {
   this.size = size;
   this.toppings = [topping];
+  this.cost = [];
 }
 
 Pizza.prototype.addToppings = function (newTopping) {
@@ -11,6 +12,17 @@ Pizza.prototype.addToppings = function (newTopping) {
 
 Pizza.prototype.fullPizza = function () {
   return this.size + ": " + this.toppings; 
+}
+
+Pizza.prototype.costCalculate = function() {
+  if (this.size === "large") {
+    this.cost = 12;
+  } else if (this.size === "medium") {
+    this.cost = 10; 
+  } else if (this.size === "small") {
+    this.cost = 8; 
+  }
+  return this.costCalculate();
 }
 
 // Pizza.prototype.assignId = function() {
@@ -44,14 +56,14 @@ function handleRadio(event) {
 }
 
 function calculatePrice(topping) {
-  const 
+  const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
+  if (toppingSelections === "")
 }
 
 
 function handleFormSubmission(event) {
   event.preventDefault();
-  const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
-  const toppingSelectionsArray = Array.from(toppingSelections);
+
 
 }
 
