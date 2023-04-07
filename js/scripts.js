@@ -40,11 +40,18 @@ function handleRadio(event) {
     document.getElementById("hidden-medium").removeAttribute("class");
   } else if (radioSize === "small") {
     document.getElementById("hidden-small").removeAttribute("class");
-  }
+  } 
 }
+
+function calculatePrice(topping) {
+  const 
+}
+
 
 function handleFormSubmission(event) {
   event.preventDefault();
+  const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
+  const toppingSelectionsArray = Array.from(toppingSelections);
 
 }
 
