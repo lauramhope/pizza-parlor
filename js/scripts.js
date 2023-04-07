@@ -2,10 +2,10 @@
 
 function Pizza(size, toppings) {
   this.size = size;
-  this.toppings = [toppings];
+  this.toppings = toppings;
 }
 
-Pizza.prototype.sizeCostCalculate = function() {
+Pizza.prototype.sizeCostCalculate = function(sizeCost) {
   if (this.size === "large") {
     sizeCost = 15;
   } else if (this.size === "medium") {
@@ -22,7 +22,7 @@ Pizza.prototype.fullPizza = function () {
 
 // User Interface Logic
 
-let newPizza = new Pizza();
+let newPizza = new Pizza()
 
 function handleRadio() {
   const radioSize = document.querySelector("input[name='size']:checked").value;
@@ -32,31 +32,32 @@ function handleRadio() {
     newPizza.size = "medium";
   } else if (radioSize === "small") {
     newPizza.size = "small";
-  } 
+  };
+  return newPizza.size; 
 }
 
 function handleFormSubmission(event) {
   event.preventDefault();
   handleRadio();
-  let toppingsArray = [];
   const inputToppings = document.querySelectorAll("input[name='topping-option']:checked");
+  const inputToppingsArray = Array.from(inputToppings);
   for (let i = 0; i < inputToppings.length; i++) {
     if (inputToppings[i].checked) {
-      toppingsArray.push(inputToppings[i].id)
+      inputToppingsArray.push(inputToppings[i].id)
     }
   };
 
+  let pizzaTotal = newPizza.sizeCostCalculate();
+  let displayTotalDiv = document.querySelector("#hidden-total");
+  displayTotalDiv.removeAttribute("class","hidden");
   let displaySize = document.querySelector("span#size-display");
   displaySize.innerText = newPizza.size; 
   let displayToppings = document.querySelector("span#toppings-display");
-  displayToppings.innerText = newPizza.toppings.join(", "); 
+  displayToppings.innerText = newPizza.toppings; 
   let displayPrice = document.querySelector("span#total");
-  displayPrice.innerText = newPizza.sizeCost; 
-  let displayTotalDiv = document.querySelector("#hidden-total");
-  displayTotalDiv.removeAttribute("class","hidden");
+  displayPrice.innerText = pizzaTotal; 
 }
 
 window.addEventListener("load", function() {
-  document.querySelector("#size-select").addEventListener("click",handleRadio);
   document.querySelector("#pizza-submit").addEventListener("click",handleFormSubmission); 
 })
