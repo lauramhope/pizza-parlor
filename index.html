@@ -31,92 +31,38 @@
       <input type="radio" name="size" value="small">
       Small (10")
     </label><br>
-    <button type="submit" class="btn" id="size-select">Grab some toppings!</button>
   </form>
-
-  <div class="hidden" id="hidden-large">
-    <h3>Toppings: Large</h3>
+  <br>
+  <div id="toppings">
+    <h3>Toppings</h3>
     <form id="pizza-toppings">
-      <p>Select any of the following for extras tastiness!</p>
+      <p>Select any of the following for extra tastiness!</p>
       <label>
-        <input type="checkbox" name="topping-option" value="extra-cheese">
+        <input type="checkbox" name="topping-option" value="extra-cheese" id="extra-cheese">
         Extra cheese
       </label><br />
       <label>
-        <input type="checkbox" name="topping-option" value="pepperoni">
+        <input type="checkbox" name="topping-option" value="pepperoni" id="pepperoni">
         Pepperoni
       </label><br />
       <label>
-        <input type="checkbox" name="topping-option" value="olive">
+        <input type="checkbox" name="topping-option" value="olives" id="olives">
         Black olives
       </label><br />
       <label>
-        <input type="checkbox" name="topping-option" value="green-peppers">
+        <input type="checkbox" name="topping-option" value="green-peppers" id="green-peppers">
         Green peppers
       </label><br />
       <label>
-        <input type="checkbox" name="topping-option" value="ham">
+        <input type="checkbox" name="topping-option" value="ham" id="ham">
         Ham
       </label><br />
       <button type="submit" class="btn" id="pizza-submit">Make my pizza, please!</button>
   </div>
 
-  <div class="hidden" id="hidden-medium">
-    <h3>Toppings: Medium</h3>
-    <form id="pizza-toppings">
-      <p>Select any of the following for extras tastiness!</p>
-      <label>
-        <input type="checkbox" name="topping-option" value="extra-cheese">
-        Extra cheese
-      </label><br />
-      <label>
-        <input type="checkbox" name="topping-option" value="pepperoni">
-        Pepperoni
-      </label><br />
-      <label>
-        <input type="checkbox" name="topping-option" value="olive">
-        Black olives
-      </label><br />
-      <label>
-        <input type="checkbox" name="topping-option" value="green-peppers">
-        Green peppers
-      </label><br />
-      <label>
-        <input type="checkbox" name="topping-option" value="ham">
-        Ham
-      </label><br />
-      <button type="submit" class="btn" id="pizza-submit">Make my pizza, please!</button>
-  </div>
-
-  <div class="hidden" id="hidden-small">
-    <h3>Toppings: Small</h3>
-    <form id="pizza-toppings">
-      <p>Select any of the following for extras tastiness!</p>
-      <label>
-        <input type="checkbox" name="topping-option" value="extra-cheese">
-        Extra cheese
-      </label><br />
-      <label>
-        <input type="checkbox" name="topping-option" value="pepperoni">
-        Pepperoni
-      </label><br />
-      <label>
-        <input type="checkbox" name="topping-option" value="olive">
-        Black olives
-      </label><br />
-      <label>
-        <input type="checkbox" name="topping-option" value="green-peppers">
-        Green peppers
-      </label><br />
-      <label>
-        <input type="checkbox" name="topping-option" value="ham">
-        Ham
-      </label><br />
-      <button type="submit" class="btn" id="pizza-submit">Make my pizza, please!</button>
-  </div>
-  
-  <div class="hidden">
+  <div class="hidden" id="hidden-total">
       <h3>Your Total is: $<span id="total"></span></h3>
+      <h4>One delicious <span id="size-display"></span> pizza with <span id="toppings-display"></span>, coming right up!</h4>
       <h4>Please have cash, check, or credit card available upon pickup.</h4>
   </div>
 

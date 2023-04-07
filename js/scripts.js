@@ -1,86 +1,59 @@
 // Business Logic
 
-function Pizza(size) {
+function Pizza(size, toppings) {
   this.size = size;
-  this.toppings = [];
-}
-
-Pizza.prototype.addToppings = function (newTopping) {
-  this.toppings.push(newTopping);
-}
-
-Pizza.prototype.toppingsCostCalculate = function() {
-  let smallToppings = 1; 
-  let mediumToppings = 2;
-  let largeToppings = 3;
-  let toppingsNum = this.toppings.length;
-  if (this.size === "small") {
-    return (smallToppings * toppingsNum);
-  } else if (this.size === "medium") {
-    return (mediumToppings * toppingsNum);
-  } else if (this.size === "large") {
-    return (largeToppings * toppingsNum);
-  }
-  return this.toppingsCostCalculate(); 
+  this.toppings = [toppings];
 }
 
 Pizza.prototype.sizeCostCalculate = function() {
   if (this.size === "large") {
-    sizeCost = 12;
+    sizeCost = 15;
   } else if (this.size === "medium") {
-    sizeCose = 10; 
+    sizeCose = 18; 
   } else if (this.size === "small") {
-    sizeCost = 8; 
+    sizeCost = 20; 
   }
   return sizeCost; 
-}
-
-Pizza.prototype.totalCostCalculate = function() {
-  this.totalCost = this.sizeCost + this.toppingsTotal; 
 }
 
 Pizza.prototype.fullPizza = function () {
   return this.size + ": " + this.toppings; 
 }
 
-// Pizza.prototype.assignId = function() {
-//   this.currentId += 1;
-//   return this.currentId;
-// }
-
 // User Interface Logic
 
-let pizza = new Pizza();
+let newPizza = new Pizza();
 
-function hideToppings () {
-  document.getElementById("hidden-large").setAttribute("class", "hidden");
-  // document.getElementById("hidden-medium").setAttribute("class", "hidden");
-  // document.getElementById("hidden-small").setAttribute("class", "hidden");
-}
-
-function handleRadio(event) {
-  event.preventDefault();
+function handleRadio() {
   const radioSize = document.querySelector("input[name='size']:checked").value;
-
-  hideToppings();
-
   if (radioSize === "large") {
-    document.getElementById("hidden-large").removeAttribute("class");
+    newPizza.size = "large";
   } else if (radioSize === "medium") {
-    document.getElementById("hidden-medium").removeAttribute("class");
+    newPizza.size = "medium";
   } else if (radioSize === "small") {
-    document.getElementById("hidden-small").removeAttribute("class");
+    newPizza.size = "small";
   } 
 }
 
-// function calculatePrice(topping) {
-//   const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
-
-
 function handleFormSubmission(event) {
   event.preventDefault();
+  handleRadio();
+  let toppingsArray = [];
+  const inputToppings = document.querySelectorAll("input[name='topping-option']:checked");
+  for (let i = 0; i < inputToppings.length; i++) {
+    if (inputToppings[i].checked) {
+      toppingsArray.push(inputToppings[i].id)
+    }
+  };
 
-
+  let displaySize = document.querySelector("span#size-display");
+  displaySize.innerText = newPizza.size; 
+  let displayToppings = document.querySelector("span#toppings-display");
+  displayToppings.innerText = newPizza.toppings.join(", "); 
+  let displayPrice = document.querySelector("span#total");
+  displayPrice.innerText = newPizza.sizeCost; 
+  let displayTotalDiv = document.querySelector("#hidden-total");
+  displayTotalDiv.removeAttribute("class","hidden");
 }
 
 window.addEventListener("load", function() {

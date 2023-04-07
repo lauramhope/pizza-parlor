@@ -19,13 +19,19 @@ Pizza.prototype.fullPizza()
 
 Test: "It will return a string to display the size and toppings chosen."
 Code: testPizza.fullPizza();
-Expected Output: 'medium: peppers,sausage,olives'
+Expected Output: 'medium: pepperoni, olives, peppers'
 
 Pizza.prototype.costCalculate()
 
 Test: "It will return the cost of the pizza (without toppings) based on the size selected."
 Code: testPizza.costCalculate();
 Expected Output: 'cost: 10'
+
+Pizza.prototype.toppingsCostCalculate()
+
+Test: "It will return the cost of each topping added depending on the size of the pizza."
+Code: testPizza.toppingsCostCalculate()
+Expected Output: '9'
 
 ```
 
