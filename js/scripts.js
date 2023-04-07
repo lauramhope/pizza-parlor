@@ -1,29 +1,45 @@
 // Business Logic
 
-function Pizza(size, topping, sizeCost) {
+function Pizza(size) {
   this.size = size;
-  this.toppings = [topping];
-  this.sizeCost = sizeCost; 
+  this.toppings = [];
 }
 
 Pizza.prototype.addToppings = function (newTopping) {
   this.toppings.push(newTopping);
+  let toppingsTotal = 0;
+  let smallToppings = 1; 
+  let mediumToppings = 2;
+  let largeToppings = 3;
+  let toppingsNum = this.toppings.length;
+  
+  if (this.size === "small") {
+    toppingsTotal = (smallToppings * toppingsNum);
+  } else if (this.size === "medium") {
+    toppingsTotal = (mediumToppings * toppingsNum);
+  } else if (this.size === "large") {
+    toppingsTotal = (largeToppings * toppingsNum);
+  }
+  return toppingsTotal; 
 };
 
 Pizza.prototype.fullPizza = function () {
   return this.size + ": " + this.toppings; 
 }
 
-Pizza.prototype.costCalculate = function() {
-  let sizePrice = 0;
+Pizza.prototype.sizeCostCalculate = function() {
   if (this.size === "large") {
-    sizePrice = 12;
+    sizeCost = 12;
   } else if (this.size === "medium") {
-    sizePrice = 10; 
+    sizeCose = 10; 
   } else if (this.size === "small") {
-    sizePrice = 8; 
+    sizeCost = 8; 
   }
-  this.costCalculate() = sizePrice; 
+  return sizeCost; 
+}
+
+Pizza.prototype.totalCostCalculate = function() {
+  this.totalCost = this.sizeCost + this.toppingsTotal; 
 }
 
 // Pizza.prototype.assignId = function() {
@@ -37,8 +53,8 @@ let pizza = new Pizza();
 
 function hideToppings () {
   document.getElementById("hidden-large").setAttribute("class", "hidden");
-  document.getElementById("hidden-medium").setAttribute("class", "hidden");
-  document.getElementById("hidden-small").setAttribute("class", "hidden");
+  // document.getElementById("hidden-medium").setAttribute("class", "hidden");
+  // document.getElementById("hidden-small").setAttribute("class", "hidden");
 }
 
 function handleRadio(event) {
@@ -56,10 +72,8 @@ function handleRadio(event) {
   } 
 }
 
-function calculatePrice(topping) {
-  const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
-  if (toppingSelections === "")
-}
+// function calculatePrice(topping) {
+//   const toppingSelections = document.querySelectorAll("input[name=topping-option]:checked");
 
 
 function handleFormSubmission(event) {
