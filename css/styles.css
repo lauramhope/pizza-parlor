@@ -1,13 +1,37 @@
-/* .hidden-toppings {
-  display: none;
-} */
-
-
 .hidden {
   display: none;
 }
 
 body {
-  padding-left: 20px;
-  padding-top: 20px;
+  padding-right: 55px;
+  padding-top: 55px; 
+  text-align: right; 
+  background-image: url("pizza.jpg");
+  background-position: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: Georgia; 
+}
+
+#pizza-submit {
+  background-color: #f07c6b; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+#pizza-refresh {
+  background-color: #7194cf; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

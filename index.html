@@ -14,29 +14,26 @@
 
   <div id="intro">
     <h1>Epicodus Pizza Parlor</h1>
-    <h5>Welcome to the Epicodus Pizza Parlor! Please select a pizza size and any toppings listed below <em>(price varies due to size of pizza).</em> Total will be calculated at the bottom of the page, thank you for dining with us!</h5>
+    <br>
+    <h4>Thank you for dining with us!</h4>
+    <h5>Please select a pizza size and any toppings listed below.</h5>
+    <h5>Total will be displayed at the bottom of the page.</h5>
+    <h5><em>(Toppings are free of charge)</em></h5>
   </div>
-
-  <h3>Pizza Size</h3>
+  <br>
   <form id="pizza-size">
-    <label>
-      <input type="radio" name="size" value="large">
-      Large (14")
-    </label><br>
-    <label>
-      <input type="radio" name="size" value="medium">
-      Medium (12")
-    </label><br>
-    <label>
-      <input type="radio" name="size" value="small">
-      Small (10")
-    </label><br>
+    <label>Select a size</label>
+    <select id="select-size">
+      <option value="small">Small (10")</option>
+      <option value="medium">Medium (12")</option>
+      <option value="large">Large (14")</option>
+    </select>
   </form>
   <br>
   <div id="toppings">
-    <h3>Toppings</h3>
+    <h2>Toppings</h2>
     <form id="pizza-toppings">
-      <p>Select any of the following for extra tastiness!</p>
+      <h5>Select any of the following for extra tastiness!</h5>
       <label>
         <input type="checkbox" name="topping-option" value="extra-cheese" id="Extra cheese">
         Extra cheese
@@ -57,6 +54,19 @@
         <input type="checkbox" name="topping-option" value="ham" id="Ham">
         Ham
       </label><br />
+      <label>
+        <input type="checkbox" name="topping-option" value="spinach" id="Spinach">
+        Spinach
+      </label><br />
+      <label>
+        <input type="checkbox" name="topping-option" value="mushrooms" id="Mushrooms">
+        Mushrooms
+      </label><br />
+      <label>
+        <input type="checkbox" name="topping-option" value="pineapple" id="Pineapple">
+        Pineapple
+      </label><br />
+      <br>
       <button type="submit" class="btn" id="pizza-submit">Make my pizza, please!</button>
   </div>
 
@@ -66,6 +76,9 @@
       <h4>Your Total is: $<span id="total"></span></h4>
       <h5>Please have cash, check, or credit card available upon pickup.</h5>
   </div>
-
+  <br>
+  <form>
+    <button class="restart-btn" id="pizza-refresh">Start Over!</button>
+  </form>
 </body>
 </html>
