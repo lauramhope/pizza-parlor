@@ -2,27 +2,22 @@
 
 function Pizza(size, toppings) {
   this.size = size;
-  this.toppings = toppings;
+  this.toppings = [toppings];
 }
 
 Pizza.prototype.sizeCostCalculate = function(sizeCost) {
   if (this.size === "large") {
-    sizeCost = 15;
+    sizeCost = 20;
   } else if (this.size === "medium") {
-    sizeCose = 18; 
+    sizeCost = 18; 
   } else if (this.size === "small") {
-    sizeCost = 20; 
+    sizeCost = 15; 
   }
   return sizeCost; 
 }
-
-Pizza.prototype.fullPizza = function () {
-  return this.size + ": " + this.toppings; 
-}
-
 // User Interface Logic
 
-let newPizza = new Pizza()
+let newPizza = new Pizza();
 
 function handleRadio() {
   const radioSize = document.querySelector("input[name='size']:checked").value;
@@ -39,8 +34,8 @@ function handleRadio() {
 function handleFormSubmission(event) {
   event.preventDefault();
   handleRadio();
+  let inputToppingsArray = []
   const inputToppings = document.querySelectorAll("input[name='topping-option']:checked");
-  const inputToppingsArray = Array.from(inputToppings);
   for (let i = 0; i < inputToppings.length; i++) {
     if (inputToppings[i].checked) {
       inputToppingsArray.push(inputToppings[i].id)
@@ -49,12 +44,13 @@ function handleFormSubmission(event) {
 
   let pizzaTotal = newPizza.sizeCostCalculate();
   let displayTotalDiv = document.querySelector("#hidden-total");
-  displayTotalDiv.removeAttribute("class","hidden");
   let displaySize = document.querySelector("span#size-display");
-  displaySize.innerText = newPizza.size; 
-  let displayToppings = document.querySelector("span#toppings-display");
-  displayToppings.innerText = newPizza.toppings; 
+  let displayToppings = document.getElementById("toppings-display");
   let displayPrice = document.querySelector("span#total");
+  displayTotalDiv.removeAttribute("class","hidden");
+  displaySize.innerText = newPizza.size; 
+  displayToppings.innerText = newPizza.toppings;
+  console.log(inputToppingsArray);
   displayPrice.innerText = pizzaTotal; 
 }
 
