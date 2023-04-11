@@ -26,7 +26,7 @@ function handleFormSubmission(event) {
     if (inputToppings[i].checked) {
       inputToppingsArray.push(inputToppings[i].id)
     }
-  };
+  }
   let newPizza = new Pizza(sizeSelect, inputToppingsArray);
   let pizzaTotal = newPizza.sizeCostCalculate();
   let displayTotalDiv = document.querySelector("#hidden-total");
