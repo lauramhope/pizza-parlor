@@ -3,17 +3,18 @@
 function Pizza(size, toppings) {
   this.size = size;
   this.toppings = toppings;
+  this.cost = 0; 
 }
 
 Pizza.prototype.costCalculate = function() {
   if (this.size === "large") {
-    sizeCost = 20;
+    this.cost += 20;
   } else if (this.size === "medium") {
-    sizeCost = 18; 
+    this.cost += 18; 
   } else if (this.size === "small") {
-    sizeCost = 15; 
+    this.cost += 15; 
   }
-  return sizeCost; 
+  return this.cost; 
 }
 // User Interface Logic
 
