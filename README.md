@@ -33,23 +33,15 @@ Test: "It will create a pizza with an array for multiple toppings chosen."
 Code: let testPizza = new Pizza("medium",['pepperoni','olives']);
 Expected Output: (size: "medium", toppings: ['pepperoni', 'olives']); 
 
-Describe: Pizza.prototype.addToppings()
-
-Test: "It will create a function that will push new toppings chosen into the Pizza toppings array."
-Code: testPizza.addToppings('peppers');
-Expected Output: (size: "medium", toppings: ['pepperoni', 'olives','peppers']); 
-
-Describe: Pizza.prototype.fullPizza()
-
-Test: "It will return a string to display the size and toppings chosen."
-Code: testPizza.fullPizza();
-Expected Output: 'medium: pepperoni, olives, peppers'
-
-Describe: Pizza.prototype.sizeCostCalculate()
+Describe: Pizza.prototype.costCalculate()
 
 Test: "It will return the cost of the pizza (without toppings) based on the size selected."
-Code: testPizza.sizeCostCalculate();
-Expected Output: 'cost: 18'
+Code: testPizza.costCalculate("small");
+Code: testPizza.costCalculate("medium");
+Code: testPizza.costCalculate("large");
+Expected Output: small: '15'
+Expected Output: medium: '18'
+Expected Output: large: '20'
 
 ```
 ## Known Bugs
