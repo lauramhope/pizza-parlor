@@ -39,6 +39,12 @@ Test: "It will return the cost of the pizza (without toppings) based on the size
 Code: testPizza.costCalculate("small");
 Expected Output: small: '15'
 
+Test: "It will return the cost of the pizza (without toppings) based on the size 'medium' selected."
+Code: testPizza.costCalculate("medium");
+Expected Output: medium: '18'
+
+
+
 ```
 ## Known Bugs
 
