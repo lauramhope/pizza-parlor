@@ -43,6 +43,12 @@ Expected Output: small: '15'
 Expected Output: medium: '18'
 Expected Output: large: '20'
 
+Test: "It will determine the cost of the pizza based on the size selected and number of toppings added." 
+Code: testPizza.costCalculate("small", ["olives"]);
+Code: testPizza.costCalculate("medium", ["olives","pepperoni"]);
+Code: testPizza.costCalculate("large", ["olives","pepperoni","ham"]);
+Expected Output: 
+
 ```
 ## Known Bugs
 
