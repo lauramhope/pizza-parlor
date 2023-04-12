@@ -35,21 +35,9 @@ Expected Output: (size: "medium", toppings: ['pepperoni', 'olives']);
 
 Describe: Pizza.prototype.costCalculate()
 
-Test: "It will return the cost of the pizza (without toppings) based on the size selected."
+Test: "It will return the cost of the pizza (without toppings) based on the size 'small' selected."
 Code: testPizza.costCalculate("small");
-Code: testPizza.costCalculate("medium");
-Code: testPizza.costCalculate("large");
 Expected Output: small: '15'
-Expected Output: medium: '18'
-Expected Output: large: '20'
-
-Test: "It will determine the cost of the pizza based on the size selected and number of toppings added ($1 per topping)." 
-Code: testPizza.costCalculate("small", ["olives"]);
-Code: testPizza.costCalculate("medium", ["olives","pepperoni"]);
-Code: testPizza.costCalculate("large", ["olives","pepperoni","ham"]);
-Expected Output: small: '16'
-Expected Output: medium: '20'
-Expected Output: large: '23'
 
 ```
 ## Known Bugs
