@@ -28,7 +28,7 @@ function handleFormSubmission(event) {
     }
   }
   let newPizza = new Pizza(sizeSelect, inputToppingsArray);
-  let pizzaTotal = newPizza.sizeCostCalculate();
+  let pizzaTotal = newPizza.costCalculate();
   let displayTotalDiv = document.querySelector("#hidden-total");
   let displaySize = document.querySelector("span#size-display");
   let displayToppings = document.getElementById("toppings-display");
