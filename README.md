@@ -47,6 +47,10 @@ Test: "It will determine the cost of the pizza based on the size 'small' selecte
 Code: testPizza.costCalculate("small", ["olives"]);
 Expected Output: small: '16'
 
+Test: "It will determine the cost of the pizza based on the size 'medium' selected and 2 toppings added."
+Code: testPizza.costCalculate("medium", ["olives","pepperoni"]);
+Expected Output: medium: '20'
+
 Describe: Pizza.prototype.addTopping()
 
 Test: "It will create a pizza with an array for multiple toppings chosen."
