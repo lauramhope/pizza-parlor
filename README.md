@@ -36,6 +36,23 @@ Code: let testPizza = new Pizza ("", []);
 testPizza.costCalculate();
 Expected Output: testPizza = '100';
 
+Test: "It will return the cost of the pizza (without toppings) based on the size 'small' selected."
+Code: let testPizza = new Pizza("small", []);
+testPizza.costCalculate();
+Expected Output: testPizza = '15';
+
+Test: "It will return the cost of the pizza (without toppings) based on the size 'medium' selected."
+Code: let testPizza = new Pizza("medium", []);
+testPizza.costCalculate();
+Expected Output: testPizza = '18';
+
+
+Test: "It will return the cost of the pizza (without toppings) based on the size 'large' selected."
+Code: let testPizza = new Pizza("large", []);
+testPizza.costCalculate();
+Expected Output: testPizza = '20';
+
+
 ```
 ## Known Bugs
 
