@@ -1,9 +1,13 @@
 // Business Logic
 
-function Pizza(size, toppings) {
+function Pizza(size, topping) {
   this.size = size;
-  this.toppings = toppings;
+  this.toppings = topping;
   this.cost = 0; 
+}
+
+Pizza.prototype.addTopping = function(newTopping) {
+  this.toppings.push(newTopping);
 }
 
 Pizza.prototype.costCalculate = function() {
