@@ -27,44 +27,19 @@ Describe: Pizza()
 
 Test: "It will create a pizza object with keys for size and toppings."
 Code: let testPizza = new Pizza("medium", "pepperoni");
-Expected Output: (size: "medium", toppings: "pepperoni");
+Expected Output: testPizza = (size: "medium", topping: "pepperoni");
 
 Describe: Pizza.prototype.costCalculate()
 
-Test: "It will return the cost of the pizza (without toppings) based on the size 'small' selected."
-Code: testPizza.costCalculate("small");
-Expected Output: small: '15'
-
-Test: "It will return the cost of the pizza (without toppings) based on the size 'medium' selected."
-Code: testPizza.costCalculate("medium");
-Expected Output: medium: '18'
-
-Test: "It will return the cost of the pizza (without toppings) based on the size 'large' selected."
-Code: testPizza.costCalculate("large");
-Expected Output: large: '20'
-
-Test: "It will determine the cost of the pizza based on the size 'small' selected and 1 topping added."
-Code: testPizza.costCalculate("small", ["olives"]);
-Expected Output: small: '16'
-
-Test: "It will determine the cost of the pizza based on the size 'medium' selected and 2 toppings added."
-Code: testPizza.costCalculate("medium", ["olives","pepperoni"]);
-Expected Output: medium: '20'
-
-Test: "It will determine the cost of the pizza based on the size 'large' selected and 3 toppings added."
-Code: testPizza.costCalculate("large", ["olives","pepperoni","ham"]);
-Expected Output: large: '23'
-
-Describe: Pizza.prototype.addTopping()
-
-Test: "It will create a pizza with an array for multiple toppings chosen."
-Code: testPizza.addTopping("medium",['pepperoni','olives']);
-Expected Output: (size: "medium", toppings: ['pepperoni', 'olives']); 
+Test: "It will return a default cost of $100 for a default size pizza if size small, medium, or large is not selected."
+Code: let testPizza = new Pizza ("", []);
+testPizza.costCalculate();
+Expected Output: testPizza = '100';
 
 ```
 ## Known Bugs
 
-* _No known bugs as of 4/7/23_
+* _No known bugs as of 4/13/23_
 
 ## License
 
