@@ -11,6 +11,8 @@ Pizza.prototype.addTopping = function(newTopping) {
 }
 
 Pizza.prototype.costCalculate = function() {
+  let numToppings = this.toppings.length;
+  this.cost += (numToppings * 1);
   if (this.size === "large") {
     this.cost += 20;
   } else if (this.size === "medium") {
