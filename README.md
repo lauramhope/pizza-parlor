@@ -11,17 +11,17 @@
 * _JavaScript_
 * _Bootstrap_
 
-## Description
+## Description 
 
 _This application showcases intermediate-level JavaScript skills using constructor functions, cunstom prototypes, and input forms with checkboxes and drop down selection boxes. User can input a pizza size and selected toppings to generate an output for price based on selections._
 
-## Setup/Installation Requirements
+## Setup/Installation Requirements 
 
 * _Clone “pizza-parlor“ from the repository to your desktop_
 * _Open “pizza-parlor“ directory_
 * _Open “index.html“ file in your browser_
 
-## Tests
+## Tests 
 ```
 Describe: Pizza()
 
