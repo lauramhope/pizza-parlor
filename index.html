@@ -6,8 +6,8 @@
   rel="stylesheet" 
   integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
   crossorigin="anonymous">
-<link href="css/styles.css" rel="stylesheet" type="text/css">
-<script src="js/scripts.js"></script>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/scripts.js"></script>
   <title>Pizza Parlor</title>
 </head>
 <body>
@@ -22,6 +22,7 @@
   <form id="pizza-size">
     <label>Select a size</label>
     <select id="select-size">
+      <option value="default size">-Choose a Size-</option>
       <option value="small">Small (10") $15</option>
       <option value="medium">Medium (12") $18</option>
       <option value="large">Large (14") $20</option>
@@ -70,10 +71,10 @@
     </form>
   </div>
   <div class="hidden" id="hidden-total">
-      <h4>One delicious <span id="size-display"></span> pizza with: <span id="toppings-display"></span>!</h4>
-      <br>
-      <h4>Your Total is: $<span id="total"></span></h4>
-      <h5>Please have cash, check, or credit card available upon pickup.</h5>
+    <h4>One delicious <span id="size-display"></span> pizza with: <span id="toppings-display"></span></h4>
+    <br>
+    <h4>Your Total is: $<span id="total"></span></h4>
+    <h5>Please have cash, check, or credit card available upon pickup.</h5>
   </div>
   <br>
   <form>

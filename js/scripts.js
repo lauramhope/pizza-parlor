@@ -6,10 +6,6 @@ function Pizza(size, topping) {
   this.cost = 0; 
 }
 
-Pizza.prototype.addTopping = function(newTopping) {
-  this.toppings.push(newTopping);
-}
-
 Pizza.prototype.costCalculate = function() {
   let numToppings = this.toppings.length;
   this.cost += (numToppings * 1);
@@ -19,9 +15,12 @@ Pizza.prototype.costCalculate = function() {
     this.cost += 18; 
   } else if (this.size === "small") {
     this.cost += 15; 
-  }
+  } else {
+    this.cost += 100;
+  } 
   return this.cost; 
 }
+
 // User Interface Logic
 
 function handleFormSubmission(event) {
