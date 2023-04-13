@@ -46,12 +46,20 @@ Code: let testPizza = new Pizza("medium", []);
 testPizza.costCalculate();
 Expected Output: testPizza = '18';
 
-
 Test: "It will return the cost of the pizza (without toppings) based on the size 'large' selected."
 Code: let testPizza = new Pizza("large", []);
 testPizza.costCalculate();
 Expected Output: testPizza = '20';
 
+Test: "It will increase the total cost of the pizza by 1 dollar for 1 topping added."
+Code: let testPizza = new Pizza("small", ['olives']);
+testPizza.costCalculate();
+Expected Output: testPizza = '16';
+
+Test: "It will increase the total cost of the pizza by 1 dollar per topping for multiple toppings added."
+Code: let testPizza = new Pizza("medium", ['olives','pepperoni'])
+testPizza.costCalculate();
+Expected Output: testPizza= '20';
 
 ```
 ## Known Bugs
